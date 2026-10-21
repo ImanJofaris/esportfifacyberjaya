@@ -824,17 +824,7 @@
   function importData(file) {
     if (!file) return;
     file.text().then(function (text) {
-      var source = String(text || '').trim();
-      var object = null;
-      try {
-        var cleaned = source
-          .replace(/^\/\*[\s\S]*?\*\/\s*/, '')
-          .replace(/^\s*window\.TOURNAMENT\s*=\s*/, '')
-          .replace(/;\s*$/, '');
-        object = JSON.parse(cleaned);
-      } catch (error) {
-        try { object = JSON.parse(source); } catch (error2) { object = null; }
-      }
+      var object = parseTournamentText(text);
       if (!object) {
         toast('Fail tidak sah. Gunakan fail tournament.js yang dieksport dari laman ini.');
         return;
@@ -854,6 +844,40 @@
     }).catch(function () {
       toast('Fail tidak dapat dibaca.');
     });
+  }
+
+  function parseTournamentText(text) {
+    var source = String(text || '').trim();
+    if (!source) return null;
+    try {
+      var cleaned = source
+        .replace(/^\/\*[\s\S]*?\*\/\s*/, '')
+        .replace(/^\s*window\.TOURNAMENT\s*=\s*/, '')
+        .replace(/;\s*$/, '');
+      return JSON.parse(cleaned);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function refreshPublishedData() {
+    if (!state.data || state.edit || state.draft) return;
+    if (document.visibilityState === 'hidden') return;
+    fetch('data/tournament.js?ts=' + Date.now(), { cache: 'no-store' })
+      .then(function (response) { return response.ok ? response.text() : null; })
+      .then(function (text) {
+        if (!text) return;
+        var raw = parseTournamentText(text);
+        if (!raw) return;
+        var incoming = normalizeData(raw);
+        if (!incoming) return;
+        var incomingTime = Date.parse(incoming.updatedAt);
+        var currentTime = Date.parse(state.data.updatedAt);
+        if (!isFinite(incomingTime) || !isFinite(currentTime) || incomingTime <= currentTime) return;
+        state.data = incoming;
+        renderAll();
+      })
+      .catch(function () { /* offline, or opened from the file system */ });
   }
 
   function normalizeData(input) {
@@ -1347,6 +1371,14 @@
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(function () { drawConnectors(); });
     }
+
+    /* Keep phones close to the published file. GitHub Pages caches for 10 minutes,
+       so a cache-busted fetch every minute is what makes updates feel live. */
+    window.setTimeout(refreshPublishedData, 5000);
+    window.setInterval(refreshPublishedData, 60000);
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') refreshPublishedData();
+    });
   }
 
   function init() {

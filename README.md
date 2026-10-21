@@ -31,6 +31,8 @@ Live site: https://imanjofaris.github.io/esportfifacyberjaya/
 
 Edits made in the browser stay on that device until the exported file is committed. The venue laptop shows them instantly, while phones see the published version.
 
+While a published page is open, it checks `data/tournament.js` every 60 seconds and reloads the bracket when the file's timestamp moves forward. That works around the 10-minute GitHub Pages cache, so a committed result reaches phones within about a minute. The check is skipped while the device has an unpublished local draft or the editor is open.
+
 If a corrected result changes a winner, every later result that depended on the old winner is cleared automatically. A message tells you how many matches were cleared.
 
 - **Kosongkan** clears the score inputs for the open match. Click **Simpan** to apply it.
