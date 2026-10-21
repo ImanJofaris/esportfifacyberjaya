@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 200" fill="none" role="img" aria-label="Piala kejohanan">
+  <defs>
+    <linearGradient id="gold" x1="28" y1="14" x2="112" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8E6B2"/>
+      <stop offset=".24" stop-color="#DDB766"/>
+      <stop offset=".52" stop-color="#9B7228"/>
+      <stop offset=".7" stop-color="#E9CA7C"/>
+      <stop offset=".88" stop-color="#A97C2E"/>
+      <stop offset="1" stop-color="#7E5A1C"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="48" y1="86" x2="94" y2="150" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E7C77A"/>
+      <stop offset=".5" stop-color="#A87C2C"/>
+      <stop offset="1" stop-color="#855F1D"/>
+    </linearGradient>
+    <clipPath id="globeClip">
+      <circle cx="70" cy="48" r="32.5"/>
+    </clipPath>
+  </defs>
+
+  <ellipse cx="70" cy="184" rx="49" ry="8" fill="#000" opacity=".55"/>
+  <ellipse cx="70" cy="184" rx="49" ry="8" fill="#D6B25E" opacity=".12"/>
+
+  <path d="M26 154h88a7 7 0 0 1 7 7v8a7 7 0 0 1-7 7H26a7 7 0 0 1-7-7v-8a7 7 0 0 1 7-7Z" fill="url(#gold)"/>
+  <path d="M19 162h102v7H19z" fill="#2A1D08" opacity=".55"/>
+  <path d="M40 146h60l8 8H32z" fill="url(#gold)"/>
+
+  <path d="M60 88c-2 14-8 21-6 36 1 10 6 14 6 22h20c0-8 5-12 6-22 2-15-4-22-6-36H60Z" fill="url(#goldSoft)"/>
+  <path d="M64 91c-1 13-6 21-4 34" stroke="#F8E6B2" stroke-opacity=".38" stroke-width="2" stroke-linecap="round"/>
+
+  <path d="M55 78h30v6a5 5 0 0 1-5 5H60a5 5 0 0 1-5-5v-6Z" fill="url(#gold)"/>
+  <path d="M57 80h26" stroke="#F8E6B2" stroke-opacity=".45" stroke-width="1"/>
+
+  <circle cx="70" cy="48" r="33" fill="url(#gold)"/>
+  <g clip-path="url(#globeClip)" stroke="#5A3E12" stroke-opacity=".55" stroke-width="1.1">
+    <ellipse cx="70" cy="48" rx="11.5" ry="32.5"/>
+    <ellipse cx="70" cy="48" rx="23" ry="32.5"/>
+    <path d="M37 48h66M40 32h60M40 64h60M50 19h40M50 77h40"/>
+  </g>
+  <circle cx="70" cy="48" r="33" stroke="#F8E6B2" stroke-opacity=".6" stroke-width="1.4"/>
+  <path d="M48 26c4-6 11-10 19-12" stroke="#FFF3CF" stroke-opacity=".6" stroke-width="2.4" stroke-linecap="round"/>
+
+  <path d="M56 146h28" stroke="#F8E6B2" stroke-opacity=".32" stroke-width="1"/>
+</svg>

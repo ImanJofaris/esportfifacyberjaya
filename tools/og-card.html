@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>E-Sport FIFA · OG card</title>
+<style>
+  @font-face { font-family: Anton; src: url('../assets/fonts/anton-400.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: Barlow; src: url('../assets/fonts/barlow-400.woff2') format('woff2'); font-weight: 400; }
+  @font-face { font-family: Barlow; src: url('../assets/fonts/barlow-500.woff2') format('woff2'); font-weight: 500; }
+  @font-face { font-family: Barlow; src: url('../assets/fonts/barlow-600.woff2') format('woff2'); font-weight: 600; }
+  @font-face { font-family: Barlow; src: url('../assets/fonts/barlow-700.woff2') format('woff2'); font-weight: 700; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative;
+    background:
+      radial-gradient(760px 460px at 88% 48%, rgba(214, 178, 94, 0.17), transparent 68%),
+      radial-gradient(900px 460px at 50% -160px, rgba(27, 42, 107, 0.55), transparent 68%),
+      #07080b;
+    color: #f4eddc;
+    font-family: Barlow, sans-serif;
+  }
+  .pattern {
+    position: absolute; inset: 0;
+    background: url('../assets/img/pattern.svg') 0 0 / 160px 160px;
+    opacity: 0.06;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+  }
+  .frame {
+    position: absolute; inset: 18px;
+    border: 1px solid rgba(214, 178, 94, 0.22);
+    border-radius: 8px;
+  }
+  .frame::before, .frame::after {
+    content: ''; position: absolute; width: 70px; height: 1px; background: #d6b25e;
+    opacity: 0.6;
+  }
+  .frame::before { top: -1px; left: 38px; }
+  .frame::after { bottom: -1px; right: 38px; }
+  .inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 44px 58px 34px;
+  }
+  .brandline {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.17em;
+    text-transform: uppercase; color: #857f72; white-space: nowrap;
+  }
+  .brandline b { color: #f3d99a; font-weight: 600; }
+  .brandline i {
+    display: inline-block; margin: 0 14px; font-size: 5px; font-style: normal;
+    color: #d6b25e; opacity: 0.7;
+  }
+  .main {
+    display: flex; align-items: center; gap: 34px; flex: 1;
+    padding-top: 4px;
+  }
+  .left { flex: 1; min-width: 0; }
+  .title {
+    margin: 0; font-family: Anton; font-size: 116px; font-weight: 400;
+    line-height: 0.84; letter-spacing: 0.012em; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .title span {
+    background: linear-gradient(180deg, #f8e7b5 0%, #e1bd6d 42%, #b38734 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  .stage {
+    display: inline-block; margin-top: 22px; padding: 10px 24px;
+    border: 1px solid rgba(214, 178, 94, 0.5); border-radius: 4px;
+    background: linear-gradient(180deg, #21327c, #14205a 58%, #101a4c);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    font-size: 17px; font-weight: 600; line-height: 1; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #fff;
+  }
+  .date {
+    margin-top: 22px; font-family: Anton; font-size: 29px; line-height: 1;
+    letter-spacing: 0.07em; text-transform: uppercase; color: #f4eddc;
+  }
+  .date b { font-weight: 400; color: #f3d99a; }
+  .venue { margin-top: 11px; font-size: 13px; letter-spacing: 0.04em; color: #bdb6a7; }
+  .right {
+    position: relative; flex: 0 0 292px; display: flex; align-items: center; justify-content: center;
+    align-self: stretch;
+  }
+  .right::before {
+    content: ''; position: absolute; width: 380px; height: 380px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(214, 178, 94, 0.2), rgba(214, 178, 94, 0.04) 45%, transparent 70%);
+  }
+  .right img {
+    position: relative; width: 230px; height: auto;
+    filter: drop-shadow(0 22px 40px rgba(214, 178, 94, 0.2));
+  }
+  .bottom {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    padding-top: 20px; border-top: 1px solid rgba(244, 237, 220, 0.1);
+    font-size: 9.5px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #857f72;
+  }
+  .bottom i { width: 4px; height: 4px; background: #d6b25e; opacity: 0.6; transform: rotate(45deg); }
+  .bottom strong { color: #bdb6a7; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="pattern"></div>
+  <div class="frame"></div>
+  <div class="inner">
+    <div class="brandline">
+      <b>Sepang Berselawat</b><i></i>Majlis Perbandaran Sepang<i></i>Masjid Raja Haji Fi Sabilillah<i></i>Cyberjaya
+    </div>
+    <div class="main">
+      <div class="left">
+        <h1 class="title">E-SPORT <span>FIFA</span></h1>
+        <div class="stage">Peringkat Kalah Mati</div>
+        <div class="date">Sabtu <b>24 Okt 26</b></div>
+        <div class="venue">Masjid Raja Haji Fi Sabilillah, Cyberjaya</div>
+      </div>
+      <div class="right">
+        <img src="../assets/img/trophy.svg" alt="">
+      </div>
+    </div>
+    <div class="bottom">
+      <span><strong>32</strong> Pemain</span><i></i><span><strong>31</strong> Perlawanan</span><i></i><span><strong>Satu</strong> Juara</span>
+    </div>
+  </div>
+</body>
+</html>
